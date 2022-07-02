@@ -1,0 +1,27 @@
+[color]
+  ui=true
+
+[user]
+  name=michael
+  email=4apaev@gmail.com
+
+[push]
+  default=current
+
+[merge]
+  log=true
+
+[help]
+  autocorrect=1
+
+[alias]
+  l=log --pretty=oneline -n 60 --graph --abbrev-commit
+  ll=log --pretty=oneline --graph --decorate --all
+  st=status
+  s=status -s
+  ci=commit
+  cm=commit -m
+  co=checkout
+  br=branch
+  dff=!"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
