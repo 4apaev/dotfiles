@@ -1,0 +1,50 @@
+{
+
+  "margin"         : 2, // Spacing between the gutter and the text
+  "tab_size"       : 2,
+  "font_size"      : 12,
+  "font_face"      : "IBM Plex Mono", // IBM Plex Mono | Menlo | PT Mono | Fira Code Retina
+  "line_padding_bottom": -0.5,
+  "line_padding_top": -0.5,
+
+  "font_options"   : [
+    "gray_antialias",
+    "dlig",
+    "ss10"
+  ],
+
+  // "theme"                            : "Broceanic.sublime-theme",
+  "color_scheme"                     : "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+  "file_tab_style"                   : "rounded",
+  "bold_folder_labels"               : true,
+  "adaptive_dividers"                : false,
+
+  "show_rel_path"                    : true,
+  "show_encoding"                    : true,
+  "highlight_modified_tabs"          : true,
+
+  "save_on_focus_lost"               : true,
+  "close_windows_when_empty"         : true,
+  "close_deleted_files"              : true,
+  // "open_files_in_new_window"         :"never",
+
+  "auto_complete_use_history"        : true,
+  "auto_complete_commit_on_tab"      : true,
+  "auto_find_in_selection"           : true,
+
+  "indent_guide_options"             : [ "draw_active"],
+  "shift_tab_unindent"               : true,
+  "translate_tabs_to_spaces"         : true,
+  "rulers"                           : [ 128, 194, 210],
+  "draw_white_space"                 : [ "all", "selection_none"],
+  "draw_unicode_white_space"         : "all",
+  "trim_trailing_white_space_on_save": "all", //"none",
+  "control_character_style"          : "names", // hex
+  "word_separators"                  : "_./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
+
+  "ignored_packages": [ "ESLint", "Vintage" ],
+  /*"font_size": 34,*/
+  /*"font_size": 14,*/
+  /*"font_size": 14,*/
+  /*"font_size": 18,*/
+}

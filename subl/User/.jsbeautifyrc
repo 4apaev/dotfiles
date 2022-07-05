@@ -1,0 +1,68 @@
+{
+  "all": {
+    "indent_char"           : " ",
+    "indent_size"           : 2,
+    "indent_level"          : 0,
+    "wrap_line_length"      : 128,
+    "indent_with_tabs"      : false,
+    "preserve_newlines"     : true,
+    "max_preserve_newlines" : 1,
+  },
+
+  "html": {
+    "unformatted"       : [],
+    "indent_inner_html" : true,
+    "indent_scripts"    : "keep",                    // keep | separate | normal
+    "wrap-attributes"   : "force-expand-multiline",  // auto | force | force-aligned | force-expand-multiline | aligned-multiple | preserve | preserve-aligned
+    "wrap-attributes-indent-size": 4,                // Indent wrapped attributes to after N characters [indent-size] (ignored if wrap-attributes is "aligned")
+    "allowed_file_extensions": [ "html", "xhtml", "shtml", "xml", "svg", "vue" ],
+  },
+
+  "css": {
+    "selector_separator"         : " ",
+    "selector_separator_newline" : false,
+    "newline_between_rules"      : true,
+    "allowed_file_extensions"    : [ "css", "scss", "sass", "less", "styl" ]
+  },
+
+  "js": {
+    "comma_first"              : false,
+    "break_chained_methods"    : false,
+    "keep_array_indentation"   : false,
+    "keep_function_indentation": false,
+
+    "space_after_anon_function": false,
+    "space_before_conditional" : true,
+    "space_in_empty_paren"     : false,
+    "space_in_paren"           : false,
+    "unescape_strings"         : false,
+
+    "brace_style"              : "collapse-preserve-inline",  // collapse | collapse-preserve-inline | expand | end-expand | none
+    "operator_position"        : "before-newline",            // before-newline | after-newline | preserve-newline
+    "allowed_file_extensions": [
+      "js",
+      "json",
+      "jsbeautifyrc",
+      "*.sublime-@(settings|keymap|commands|menu|workspace)",
+      "*.sublime-settings",
+      "*.sublime-keymap",
+      "*.sublime-commands",
+      "*.sublime-menu",
+      "*.sublime-workspace",
+      "*.code-workspace",
+    ],
+  },
+
+  "json": {
+    "unescape_strings": false,
+    "brace_style": "collapse-preserve-inline",
+  },
+  "custom": {
+    "@(package?(-lock)|yarn-lock).json": { "indent_size": 2 },
+    "*.sublime-@(settings|keymap|commands|menu|workspace)": {
+      "indent_size": 2,
+      "comma_first": false,
+      "brace_style": "expand",
+    }
+  }
+}

@@ -1,0 +1,140 @@
+<snippet>
+  <content><![CDATA[
+
+export const µ = undefined
+export const doc = document
+export const B = Boolean
+export const N = Number
+export const S = String
+export const A = Array
+export const O = Object
+export const F = Function
+export const P = Promise
+export const E = Error
+
+export const {
+  keys,
+  assign,
+  fromEntries: from
+} = O
+
+export function echo(x) {
+  return x
+}
+
+export function sleep(...a) {
+  return new P(ok => delay(ok, ...a))
+}
+
+export function random(a, b, r = +random) {
+  return a == µ
+    ? r
+    : round(b == µ
+      ? r * a
+      : r * (b - a) + a)
+}
+
+export function use(a, b, c = b, d = a) {
+  return O.defineProperties(a, O.getOwnPropertyDescriptors(b))
+}
+
+export function alias(a, b, c = b, d = a) {
+  return O.defineProperty(d, c, O.getOwnPropertyDescriptor(a, b))
+}
+
+export function entries(x) {
+  return Symbol.iterator in O(x)
+    ? x?.entries?.() ?? A.from(x, (v, k) => [ k, v ])
+    : O.entries(x)
+}
+
+export function each(it, fx, ctx) {
+  for (const [ k, v ] of entries(it))
+    fx.call(ctx, k, v)
+  return ctx
+}
+
+export function T(x) {
+  return toString.call(x).slice(8, -1)
+}
+
+export function Is(a, b) {
+  return arguments.length < 2
+    ? a != µ
+    : a === b?.constructor
+}
+
+export function Log(s, ...a) {
+  s?.raw
+    ? console.log(S.raw(s, ...a))
+    : console.log(s, ...a)
+}
+
+export function raise(s, ...a) {
+  throw s?.raw
+    ? S.raw(s, ...a)
+    : s
+}
+
+use(Log, console)
+alias(Log, 'group', 'g')
+alias(Log, 'groupEnd', 'end')
+alias(Log, 'groupCollapsed', 'gc')
+
+
+export function predicate(x) {
+  if (Is(F, x))
+    return x
+  const ks = O.keys(x)
+  return o => ks.every(k => o[ k ] === x[ k ])
+}
+
+export function fill(n, fx = x => x) {
+  return Is(F, fx)
+    ? A.from({ length: n }, (_, i) => fx(i))
+    : A(n).fill(fx)
+}
+
+export function where(it, iter, ctx) {
+  return it.filter(predicate(iter), ctx)
+}
+
+export function rm(it, iter, ctx, j = 0, re = []) {
+  for (let x, i = 0, cb = predicate(iter); i < it.length; i++) {
+    cb.call(ctx, x = it[ i ], i)
+      ? re.push(x)
+      : it[ j++ ] = it[ i ]
+  }
+  it.length = j
+  return re
+}
+
+export function chop(it, n, re = []) {
+  for (let tmp, i = 0, cb = n === +n ? (_, i) => 0 === i % n : n; i < it.length; i++) {
+    cb(it[ i ], i) && re.push(tmp = [])
+    tmp.push(it[ i ])
+  }
+  return re
+}
+
+export function invoke(it, fn, ...a) {
+  return it.map(Is(F, fn)
+    ? x => fn.apply(x, a)
+    : Is(F, it?.[ 0 ]?.[ fn ])
+      ? x => x[ fn ].apply(x, a)
+      : x => x[ fn ])
+}
+
+export function rotor(n) {
+  const r = A(n)
+  r.i = 0
+  r.add = x => {
+    r.head = r[ r.cursor = r.i++ % n ] = x
+    return r.i
+  }
+  return r
+}
+
+]]></content>
+  <tabTrigger>sugar</tabTrigger>
+</snippet>

@@ -1,0 +1,278 @@
+env:
+  node: true
+  mocha: true
+  es2021: true
+  browser: true
+
+globals:
+  isNan: true
+  isFinite: true
+  toString: true
+  hasOwnProperty: true
+
+extends:
+  - eslint:recommended
+
+parserOptions:
+  sourceType: module
+  ecmaVersion: 2022
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+rules:
+  no-var: warn
+  no-debugger: error
+  no-unneeded-ternary: error
+  no-empty:
+    - error
+    - allowEmptyCatch: true
+
+  no-cond-assign: off
+  no-unused-vars: off
+    # - error
+    # - args: after-used
+    #   caughtErrors: none
+    #   argsIgnorePattern: ^_
+    #   varsIgnorePattern: ^_
+
+  no-useless-computed-key:
+    - error
+    - enforceForClassMembers: true
+
+  semi:
+    - error
+    - never
+
+  new-parens:
+    - error
+    - never
+
+  one-var:
+    - error
+    - initialized: never
+
+  multiline-ternary:
+    - error
+    - always-multiline
+
+  eol-last:
+    - error
+    - always
+
+  camelcase:
+    - warn
+    - properties: never
+
+  curly:
+    - error
+    - multi-or-nest
+    - consistent
+
+  brace-style:
+    - error
+    - stroustrup
+    # - 1tbs
+    - allowSingleLine: true
+
+  quotes:
+    - error
+    - single
+    - allowTemplateLiterals: true
+
+  object-shorthand: # error
+    - error
+    - always
+    # - avoidExplicitReturnArrows: false
+
+  prefer-arrow-callback:
+    - error
+    - allowUnboundThis: true
+      allowNamedFunctions: true
+
+  # prefer-const: error
+  # prefer-rest: error
+  # prefer-spread: error
+  # prefer-numeric: error
+  # prefer-reflect: error
+  # prefer-template: error
+  # prefer-destructuring: error
+
+  # grouped-accessor-pairs:
+  #   - error
+  #   - getBeforeSet
+
+  lines-between-class-members:
+    - error
+    - always
+    - exceptAfterSingleLine: true
+
+  arrow-parens:
+    - error
+    - as-needed
+
+  arrow-body-style:
+    - error
+    - as-needed
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  space-infix-ops:
+    - error
+    - int32Hint: true
+
+  comma-spacing:
+    - error
+    - after: true
+      before: false
+
+  block-spacing: error
+  space-in-parens: error
+  func-call-spacing: error
+  space-before-function-paren:
+    - error
+    - named: never
+      anonymous: always
+      asyncArrow: always
+
+  template-curly-spacing:
+    - error
+    - always
+
+  computed-property-spacing:
+    - error
+    - always
+
+  object-curly-spacing:
+    - error
+    - always
+    - arraysInObjects: false
+      objectsInObjects: false
+
+  array-bracket-spacing:
+    - error
+    - always
+    - arraysInArrays: false
+      objectsInArrays: false
+
+  key-spacing:
+    - error
+    - beforeColon: false
+      afterColon: true
+
+  keyword-spacing:
+    - error
+    - before: true
+      after: true
+      overrides:
+        return:
+          after: true
+        throw:
+          after: true
+        case:
+          after: true
+
+  spaced-comment:
+    - error
+    - always
+    - exceptions: [ '-', '+', '=', '#', '/', '*' ]
+
+  multiline-comment-style:
+    - off
+    - starred-block
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  no-multiple-empty-lines:
+    - error
+    - max: 1
+  max-depth:
+    - off
+    - 4
+
+  max-len:
+    - error
+    - 128
+    - 2
+    - ignoreUrls: true
+      ignoreStrings: true
+      ignoreRegExpLiterals: true
+      ignoreTemplateLiterals: true
+      ignoreComments: false
+
+  max-lines:
+    - off
+    - max: 300
+      # skipComments: false
+      # skipBlankLines: false
+
+  max-lines-per-function:
+    - off
+    - max: 50
+      IIFEs: true
+      skipComments: true
+      skipBlankLines: true
+
+  max-nested-callbacks: off
+  max-params:
+    - off
+    - 3
+  max-statements:
+    - 'off'
+    - 10
+  max-statements-per-line:
+    - 'off'
+    - max: 1
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+      outerIIFEBody: 1
+      ArrayExpression: 1
+      ObjectExpression: 1
+      ImportDeclaration: 1
+      MemberExpression: 2
+      VariableDeclarator:
+        const: 2
+        var: 2
+        let: 1
+
+      ignoreComments: true
+      flatTernaryExpressions: true
+      offsetTernaryExpressions: false
+
+      CallExpression:
+        arguments: 1
+
+      FunctionDeclaration:
+        parameters: 2
+        body: 1
+
+      FunctionExpression:
+        parameters: 2
+        body: 1
+
+  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+  comma-dangle:
+    - error
+    - arrays: always-multiline
+      objects: always-multiline
+      imports: always-multiline
+      exports: always-multiline
+      functions: always-multiline
+
+  comma-style:
+    - error
+    - last
+    - exceptions:
+        ArrayPattern: false
+        ArrayExpression: false
+        ArrowFunctionExpression: false
+        FunctionDeclaration: false
+        FunctionExpression: false
+        ObjectPattern: false
+        ObjectExpression: false
+        VariableDeclaration: false
+        ImportDeclaration: false
+        CallExpression: false
+        NewExpression: false

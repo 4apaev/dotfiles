@@ -1,0 +1,58 @@
+<snippet>
+  <content><![CDATA[
+
+// ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼
+/* ▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲ */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  * * *                     * * * * * * * * * * * * * * * * * * * * * * *
+   * * *                     * * * * * * * * * * * * * * * * * * * * * * *
+  * * *                     * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+$PARAM1, $PARAM2
+$SELECTION             The text that was selected when the snippet was triggered.
+$TM_SELECTED_TEXT      An alias for $SELECTION.
+
+$TM_CURRENT_LINE       Content of the cursor’s line when the snippet was triggered.
+$TM_CURRENT_WORD       Word under the cursor when the snippet was triggered.
+
+$TM_FILENAME           Name of the file being edited, including extension.
+$TM_FILEPATH           Path to the file being edited.
+$TM_FULLNAME           User’s user name.
+$TM_LINE_INDEX         Column where the snippet is being inserted, 0 based.
+$TM_LINE_NUMBER        Row where the snippet is being inserted, 1 based.
+$TM_SOFT_TABS          YES if translate_tabs_to_spaces is true, otherwise NO.
+$TM_TAB_SIZE           Spaces per-tab (controlled by the tab_size option).
+
+Let’s see a simple example of a snippet using variables:
+
+====================================
+USER NAME:          $TM_FULLNAME
+FILE NAME:          $TM_FILENAME
+ TAB SIZE:          $TM_TAB_SIZE
+SOFT TABS:          $TM_SOFT_TABS
+====================================
+
+# Output:
+====================================
+USER NAME:          guillermo
+FILE NAME:          test.txt
+ TAB SIZE:          4
+SOFT TABS:          YES
+====================================
+
+
+*                     *
+*                     *
+
+]]></content>
+  <tabTrigger>sugar</tabTrigger>
+</snippet>

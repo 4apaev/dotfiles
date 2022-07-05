@@ -1,0 +1,87 @@
+{
+    "all": {
+        "indent_char"                  : " ",
+        "indent_size"                  : 2,
+        "indent_level"                 : 2,
+        "indent_with_tabs"             : false,
+        "end_with_newline"             : true,
+        "preserve_newlines"            : true,
+        "max_preserve_newlines"        : 1,
+        "wrap_line_length"             : 0,
+        "eol"                          : "\n",
+    },
+    "html": {
+        "indent_inner_html"            :true,
+        "indent_scripts"               : "separate",                            // [keep|separate|normal]
+        "unformatted"                  : [],
+    },
+    "css": {
+        "newline_between_rules"        : true,
+        "selector_separator"           : " ",
+        "selector_separator_newline"   : false
+    },
+
+  /*
+
+
+    [ JS/JSON: brace_style ][
+      | collapse
+      | collapse-preserve-inline
+      | expand
+      | end-expand
+      | none  ]
+    -------------------------------
+    Put braces on the same line as control statements (default),
+    or put braces on own line (Allman / ANSI style),
+    or put end braces on own line,
+    or attempt to keep them where they are
+  */
+
+  "js": {
+        "brace_style"               : "collapse-preserve-inline",
+        "operator_position"         : "before-newline",             // [before-newline|after-newline|preserve-newline] Set operator position
+
+        "comma_first"               : false,
+        "jslint_happy"              : false,
+        "unescape_strings"          : false,
+        "break_chained_methods"     : false,
+        "keep_array_indentation"    : false,
+        "keep_function_indentation" : false,
+        "space_in_paren"            : false, // f( a, b )
+        "space_in_empty_paren"      : false, // f() vs f( )
+        "space_after_anon_function" : false, // function() vs function ()
+        "space_before_conditional"  : true,  // if(true) vs if (true)
+        "e4x"                       : true,
+  },
+  "json": {
+
+    "brace_style": "expand",
+    "keep_array_indentation": false,
+
+    // Should printable characters in strings encoded in \xNN notation be unescaped, "example" vs "\x65\x78\x61\x6d\x70\x6c\x65"
+    "unescape_strings": false
+  },
+
+    "custom":
+    {
+        // Rules added here apply only to files matching specific glob strings,
+        // but respecting any whitelists or blacklists as determined by the
+        // rules specified for `global_file_rules` in the plugin settings. They
+        // take precedence over any of the settings in the categories above.
+
+        // For the following entries, keys are globs and values are objects which
+        // can contain any kind of .jsbeautifyrc setting.
+
+        "@(package?(-lock)|yarn-lock).json":
+        {
+            "indent_size": 2,
+            "brace_style": "collapse"
+        },
+
+        "*.sublime-@(settings|keymap|commands|menu)":
+        {
+            "indent_size": 4,
+            "brace_style": "expand"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "problemMatcher": [],
+  "presentation": {
+    "panel": "shared",
+    "focus": true,
+    "clear": true,
+    "reveal": "always",
+    // "showReuseMessage": false,
+  },
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "lint",
+      "command": "eslint",
+      "args": [
+        "--fix",
+        "${workspaceFolder}/${relativeFile}"
+      ]
+    },
+    {
+      "type": "shell",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "label": "test:file",
+      "command": "mocha",
+      "args": [
+        "${workspaceFolder}/${relativeFile}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "run",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/${relativeFile}"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

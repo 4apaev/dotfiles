@@ -1,0 +1,20 @@
+{
+  "bootstrapped": true,
+  "submit_usage": false,
+  "in_process_packages": [
+  ],
+  "installed_packages": [
+    "Alignment",
+    "Babel",
+    "CSS To SASS And Stylus Converter",
+    "CSV",
+    "Dockerfile Syntax Highlighting",
+    "DotENV",
+    "ESLint",
+    "HTML-CSS-JS Prettify",
+    "Package Control",
+    "Sass",
+    "SideBarEnhancements",
+    "Stylus",
+  ],
+}

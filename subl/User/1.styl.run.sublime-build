@@ -1,0 +1,33 @@
+{
+
+  "shell": true,
+  "selector": "source.styl",
+  "cmd": [
+    "stylus -P $project_base_name-$file_base_name- $file"
+  ],
+}
+
+
+// {
+//   "shell": true,
+//   "cmd": [
+//     "stylus",
+//     "-I",     /* include */  "/Users/michael/work/fstatic/styl",
+//     "-P",     /* prefix */
+//     "${workspaceFolderBasename}-${fileBasenameNoExtension}-",
+
+// /**
+//  * @prefix
+//  * file /project/src/com/btn/toogle.styl
+//  * btn-toggle-
+//  *
+//  *
+//  */
+
+//     "-o", // out
+//     "${workspaceFolder}/dist/css/styl",
+//     "${file}"
+//   ]
+// }
+
+

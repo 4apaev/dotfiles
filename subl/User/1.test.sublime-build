@@ -1,0 +1,4 @@
+{
+  "shell": true,
+  "cmd": [ "node --test $file" ],
+}

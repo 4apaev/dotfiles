@@ -28,18 +28,36 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 echo "Install packages"
 echo
 
+
+
+brew install go
 brew install git
+brew install zsh
 brew install node
 brew install docker
 brew install docker-compose
 
-brew install --cask sublime-text
-brew install --cask sublime-merge
-brew install --cask visual-studio-code
-brew install --cask syntax-highlight
 
+# ==> Casks
+brew install --cask docker
+brew install --cask iterm2
+brew install --cask firefox
+brew install --cask telegram
+brew install --cask 1password
+
+brew install --cask font-pt-mono
 brew install --cask font-ibm-plex
 brew install --cask font-fira-code
+
+brew install --cask sublime-text
+brew install --cask sublime-merge
+brew install --cask syntax-highlight
+brew install --cask visual-studio-code
+
+
+
+
+
 
 echo
 echo "------------------------------------------------------------------------------------"

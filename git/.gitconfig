@@ -1,0 +1,43 @@
+[color]
+  ui = true
+[user]
+  name = michael
+  email = 4apaev@gmail.com
+[alias]
+  l = log --pretty=oneline -n 10 --graph --abbrev-commit
+  ll = log --pretty=oneline --graph --decorate --all
+  lg = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %d %s\" --all --date=short
+
+  l=log --pretty=oneline -n 60 --graph --abbrev-commit
+  ll=log --pretty=oneline --graph --decorate --all
+  st=status
+  s=status -s
+  ci=commit
+  cm=commit -m
+  co=checkout
+  br=branch
+
+  st = status
+   s = status -s
+  ci = commit
+  cm = commit -m
+  cl = clone
+  co = checkout
+  br = branch
+  df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  dc = diff --cached
+  cp = cherry-pick
+  # Remove branches that have already been merged with main (delete merged)
+  del = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[help]
+  autocorrect = 1
+[merge]
+  log = true
+[push]
+  # simple | current | matching
+  default = simple
+  followTags = true
+[core]
+  editor = /usr/local/bin/subl
+  excludesfile = ~/.gitignore_global

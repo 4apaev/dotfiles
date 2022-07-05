@@ -1,0 +1,14 @@
+{
+
+    "align_indent"         : true,           // indent level of multi-line selection
+    "alignment_chars"      : [ "=", ":", "," ],   // mid-line chars to align in a multi-line selection.
+    "alignment_space_chars": [ "=" ],        // insert a space before char
+    "alignment_prefix_chars": [
+        "-", "+",
+        "<", ">",
+        "&", "|",
+        "!", "~",
+        "%", "/",
+        "*", "."
+    ]
+}

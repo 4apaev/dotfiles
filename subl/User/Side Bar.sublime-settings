@@ -1,0 +1,43 @@
+{
+  "statusbar_file_size"                                : true,
+  "statusbar_modified_time"                            : true,
+  "statusbar_modified_time_format"                     : "%A %b %d %H:%M:%S %Y",
+  "statusbar_modified_time_locale"                     : "",
+
+  "close_affected_buffers_when_deleting_even_if_dirty" : false,
+  "hide_open_with_entries_when_there_are_no_applicable": false,
+
+  "confirm_before_deleting"                            : true,
+  "confirm_before_permanently_deleting"                : true,
+
+  "new_files_relative_to_project_root"                 : false,
+  "new_folders_relative_to_project_root"               : false,
+
+  "disabled_menuitem_edit_to_right"                    : false,
+  "disabled_menuitem_open_in_new_window"               : false,
+
+  "disabled_menuitem_copy_name"                        : false,
+  "disabled_menuitem_copy_path"                        : false,
+  "disabled_menuitem_paste_in_parent"                  : false,
+  "disabled_menuitem_find_in_project"                  : false,
+
+  "disabled_menuitem_open_run"                         : true,
+  "disabled_menuitem_open_in_browser"                  : true,
+  "disabled_menuitem_edit"                             : true,
+  "disabled_menuitem_folder_save"                      : true,
+  "disabled_menuitem_folder_close"                     : true,
+  "disabled_menuitem_copy_path_windows"                : true,
+  "disabled_menuitem_copy_dir_path"                    : true,
+
+  "disabled_menuitem_empty"                            : false,
+  "disable_send_to_trash"                              : false,
+
+
+  "use_command": "",
+  "use_powershell": false,
+
+  "find_and_replace_opens_in_new_view": true,
+  "find_and_replace_discards_previous_search": false,
+
+  "i_donated_to_sidebar_enhancements_developer": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DD4SL2AHYJGBW"
+}

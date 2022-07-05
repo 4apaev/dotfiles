@@ -1,0 +1,9 @@
+{
+	"extensions":
+	[
+		".c8rc",
+		".babelrc",
+		".code-workspace",
+		"code-workspace",
+	],
+}

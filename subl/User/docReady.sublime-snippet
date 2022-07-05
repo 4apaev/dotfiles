@@ -1,0 +1,31 @@
+<snippet>
+  <content><![CDATA[
+  ((doc, log, set, get) => {
+    set(EventTarget.prototype, {
+      emit: get(EventTarget.prototype, 'dispatchEvent'),
+      off: get(EventTarget.prototype, 'removeEventListener'),
+      on: get(EventTarget.prototype, 'addEventListener'),
+    })
+
+    doc.on('DOMContentLoaded', e => {
+      log('DOM fully loaded and parsed')
+    })
+
+    doc.on('pageshow', e => {
+      if (e.persisted)
+        log('This page was restored from the bfcache')
+      else
+        log('This page was loaded normally')
+  })(
+    document,
+    console.log,
+    Object.defineProperties,
+    Object.getOwnPropertyDescriptor,
+  )
+]]></content>
+  <tabTrigger>doc</tabTrigger>
+  <tabTrigger>rea</tabTrigger>
+  <tabTrigger>ready</tabTrigger>
+  <tabTrigger>onload</tabTrigger>
+  <tabTrigger>onready</tabTrigger>
+</snippet>

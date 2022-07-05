@@ -1,0 +1,6 @@
+.DS_Store
+.idea
+.c8temp
+.c8cover
+coverage
+node_modules

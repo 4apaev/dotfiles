@@ -1,0 +1,37 @@
+[
+  {
+    "id": "side-bar-files-open-with",
+    "children": [
+      {
+        "caption": "Preview",
+        "id": "side-bar-files-open-with-preview",
+        "command": "side_bar_files_open_with",
+        "args": {
+          "paths": [],
+          "application": "Preview.app",
+          "extensions": "png|jpg|jpeg|gif|pdf|svg",
+          "args": []
+        }
+      },
+      {
+        "caption": "-"
+      },
+
+      {
+        "caption": "Chrome",
+        "id": "side-bar-files-open-with-chrome",
+        "command": "side_bar_files_open_with",
+        "args": {
+          "paths": [],
+          "application": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome",
+          "extensions": ".*",
+          "args": []
+        }
+      },
+      {
+        "caption": "-"
+      }
+    ]
+  }
+]
+

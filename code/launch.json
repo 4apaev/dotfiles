@@ -1,0 +1,14 @@
+{
+  "compounds": [],
+  "configurations": [
+    {
+
+      "type": "node",
+      "name": "invoke-js-file",
+      "request": "launch",
+      "program": "${workspaceFolder}/${relativeFile}",
+      "envFile": "${workspaceFolder}/.env",
+      "cwd": "${workspaceFolder}",
+    },
+  ]
+}

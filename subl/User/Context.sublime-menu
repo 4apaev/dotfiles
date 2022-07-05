@@ -1,0 +1,4 @@
+[
+  { "command": "fold", "caption": "Fold Selected Text" },
+  { "command": "unfold", "caption": "Unfold Selected Text" },
+]
