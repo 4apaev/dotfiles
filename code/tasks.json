@@ -13,6 +13,7 @@
       "type": "shell",
       "label": "lint",
       "command": "eslint",
+      "icon": { "id": "output", "color": "terminal.ansiBlue" },
       "args": [
         "--fix",
         "${workspaceFolder}/${relativeFile}"
@@ -26,6 +27,7 @@
       },
       "label": "test:file",
       "command": "mocha",
+      "icon": { "id": "beaker", "color": "terminal.ansiMagenta" },
       "args": [
         "${workspaceFolder}/${relativeFile}"
       ],
@@ -35,6 +37,7 @@
       "type": "shell",
       "label": "run",
       "command": "node",
+      "icon": { "id": "debug-console", "color": "terminal.ansiGreen" },
       "args": [
         "${workspaceFolder}/${relativeFile}"
       ],
