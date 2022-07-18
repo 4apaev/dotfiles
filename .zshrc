@@ -32,18 +32,20 @@ alias copyfile="clipcopy"
 alias showpath="echo \"(\$PATH) /etc/paths\" && cat /etc/paths"
 alias pwdcp="pwd | pbcopy"
 
-alias l="ls -lAh" # long, all, human readable
-alias lt="l -T"   # time complete info
-alias ltm="lt -t" # time modified
-alias lta="lt -u" # time access
-alias ltc="lt -U" # time created
-
+alias l="ls -lAh"                   # long, all, human readable
+alias lt="l -T"                     # time complete info
+alias ltm="lt -t"                   # time modified
+alias lta="lt -u"                   # time access
+alias ltc="lt -U"                   # time created
+alias lsz="du -hs"                  # dir size
+alias lsza="du -hcd 0 * | sort -hr" # dir size all & sort by size
 
 alias npmi="npm i"
 alias npmr="npm run"
 alias npmt="npm test"
 alias npms="npm start"
 alias npmu="npm update"
+alias npmup="npmo; npmu --save"
 alias npml="npm ls --depth=0"
 alias npmo="npm outdated --depth=0"
 alias npmrs="del node_modules && rm package-lock.json && npmi"
@@ -116,8 +118,8 @@ function del() {
 
 function tree() {
   local dir=${1:-$(pwd)}
-  local sedmagic='s;[^/]*/;|____;g;s;____|; |;g'
-  find $dir -not -path "./node_modules" -print | sed -e "$sedmagic"
+  local magic='s;[^/]*/;│────;g;s;────│; │;g'
+  find $dir -not -path "./.git/*" -not -path "./node_modules/*" -print | sed -e "$magic"
 }
 
 function static() {
