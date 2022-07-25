@@ -1,39 +1,50 @@
 [
-  { "key": "alt+cmd+["         , "command": "-editor.fold"                              , "when": "editorFocus" },
-  { "key": "alt+cmd+["         , "command": "-editor.fold"                              , "when": "editorTextFocus && foldingEnabled" },
-  { "key": "alt+cmd+f5"        , "command": "editor.action.sortLinesDescending" },
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //  Remove rerly used
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  { "key": "alt+cmd+["         , "command": "-editor.fold"                              , "when": "editorFocus"                                      },
+  { "key": "alt+cmd+["         , "command": "-editor.fold"                              , "when": "editorTextFocus && foldingEnabled"                },
+  { "key": "cmd+k cmd+l"       , "command": "-editor.toggleFold"                        , "when": "editorTextFocus && foldingEnabled"                },
+  { "key": "cmd+["             , "command": "-editor.action.outdentLines"               , "when": "editorTextFocus && !editorReadonly"               },
+  { "key": "cmd+]"             , "command": "-editor.action.indentLines"                , "when": "editorTextFocus && !editorReadonly"               },
   { "key": "alt+shift+f"       , "command": "-editor.action.formatDocument"             , "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor" },
-  { "key": "alt+shift+f12"     , "command": "-references-view.findReferences"           , "when": "editorHasReferenceProvider" },
-  { "key": "alt+shift+r"       , "command": "references-view.findReferences"            , "when": "editorHasReferenceProvider" },
-  { "key": "cmd+0"             , "command": "workbench.action.zoomReset" },
-  { "key": "cmd+["             , "command": "-editor.action.outdentLines"               , "when": "editorTextFocus && !editorReadonly" },
-  { "key": "cmd+["             , "command": "editor.toggleFold"                         , "when": "editorTextFocus && foldingEnabled" },
-  { "key": "cmd+]"             , "command": "-editor.action.indentLines"                , "when": "editorTextFocus && !editorReadonly" },
-  { "key": "cmd+alt+c"         , "command": "-copyFilePath"                             , "when": "!editorFocus" },
-  { "key": "cmd+alt+c"         , "command": "copyFilePath"                              , "when": "editorFocus" },
-  { "key": "cmd+alt+l"         , "command": "editor.action.formatDocument"              , "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor" },
-  { "key": "cmd+alt+r"         , "command": "-revealFileInOS"                           , "when": "!editorFocus" },
-  { "key": "cmd+alt+r"         , "command": "revealFileInOS"                            , "when": "editorFocus" },
-  { "key": "cmd+e"             , "command": "eslint.executeAutofix" },
-  { "key": "cmd+f5"            , "command": "editor.action.sortLinesAscending" },
-  { "key": "cmd+k alt+cmd+s"   , "command": "-git.stageSelectedRanges"                  , "when": "isInDiffEditor" },
-  { "key": "cmd+k cmd+a"       , "command": "git.stageSelectedRanges"                   , "when": "isInDiffEditor" },
-  { "key": "cmd+k cmd+l"       , "command": "-editor.toggleFold"                        , "when": "editorTextFocus && foldingEnabled" },
-  { "key": "cmd+k"             , "command": "workbench.action.terminal.clear"           , "when": "terminalFocus" },
-  { "key": "ctrl+/"            , "command": "workbench.action.splitEditorDown" },
-  { "key": "ctrl+\\"           , "command": "workbench.action.splitEditorRight" },
-  { "key": "ctrl+`"            , "command": "-workbench.action.terminal.toggleTerminal" , "when": "terminal.active" },
-  { "key": "ctrl+`"            , "command": "workbench.action.createTerminalEditor" },
-  { "key": "ctrl+shift+cmd+f"  , "command": "-workbench.action.toggleZenMode" },
-  { "key": "shift+cmd+."       , "command": "-breadcrumbs.toggleToOn"                   , "when": "!config.breadcrumbs.enabled" },
-  { "key": "shift+cmd+/"       , "command": "editor.action.blockComment"                , "when": "editorFocus" },
-  { "key": "shift+cmd+;"       , "command": "-breadcrumbs.focus"                        , "when": "breadcrumbsPossible" },
-  { "key": "shift+cmd+["       , "command": "-workbench.action.previousEditor" },
-  { "key": "shift+cmd+]"       , "command": "-workbench.action.nextEditor" },
-  { "key": "shift+cmd+a"       , "command": "editor.action.sourceAction" },
-  { "key": "shift+cmd+e"       , "command": "-workbench.view.explorer"                  , "when": "viewContainer.workbench.view.explorer.enabled" },
-  { "key": "shift+cmd+m"       , "command": "-workbench.actions.view.problems"          , "when": "workbench.panel.markers.view.active" },
-  { "key": "shift+cmd+u"       , "command": "-workbench.action.output.toggleOutput"     , "when": "workbench.panel.output.active" },
-  { "key": "shift+cmd+x"       , "command": "-workbench.view.extensions"                , "when": "viewContainer.workbench.view.extensions.enabled" },
-  { "key": "shift+cmd+y"       , "command": "-workbench.debug.action.toggleRepl"        , "when": "workbench.panel.repl.view.active" },
+
+  { "key": "shift+cmd+]"       , "command": "-workbench.action.nextEditor"                                                                           },
+  { "key": "ctrl+shift+cmd+f"  , "command": "-workbench.action.toggleZenMode"                                                                        },
+  { "key": "shift+cmd+["       , "command": "-workbench.action.previousEditor"                                                                       },
+  { "key": "shift+cmd+m"       , "command": "-workbench.actions.view.problems"          , "when": "workbench.panel.markers.view.active"              },
+  { "key": "shift+cmd+u"       , "command": "-workbench.action.output.toggleOutput"     , "when": "workbench.panel.output.active"                    },
+  { "key": "ctrl+`"            , "command": "-workbench.action.terminal.toggleTerminal" , "when": "terminal.active"                                  },
+
+  { "key": "shift+cmd+x"       , "command": "-workbench.view.extensions"                , "when": "viewContainer.workbench.view.extensions.enabled"  },
+  { "key": "shift+cmd+e"       , "command": "-workbench.view.explorer"                  , "when": "viewContainer.workbench.view.explorer.enabled"    },
+  { "key": "shift+cmd+y"       , "command": "-workbench.debug.action.toggleRepl"        , "when": "workbench.panel.repl.view.active"                 },
+
+  { "key": "shift+cmd+;"       , "command": "-breadcrumbs.focus"                        , "when": "breadcrumbsPossible"                              },
+  { "key": "shift+cmd+."       , "command": "-breadcrumbs.toggleToOn"                   , "when": "!config.breadcrumbs.enabled"                      },
+
+  { "key": "alt+shift+f12"     , "command": "-references-view.findReferences"           , "when": "editorHasReferenceProvider"                       },
+  { "key": "cmd+k alt+cmd+s"   , "command": "-git.stageSelectedRanges"                  , "when": "isInDiffEditor"                                   },
+  { "key": "cmd+alt+c"         , "command": "-copyFilePath"                             , "when": "!editorFocus"                                     },
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //  New bindings
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  { "key": "cmd+e"             , "command": "eslint.executeAutofix"                                                        },
+  { "key": "shift+cmd+a"       , "command": "editor.action.sourceAction"                                                   },
+  { "key": "cmd+f5"            , "command": "editor.action.sortLinesAscending"                                             },
+  { "key": "alt+cmd+f5"        , "command": "editor.action.sortLinesDescending"                                            },
+  { "key": "cmd+alt+l"         , "command": "editor.action.formatDocument"   , "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor" },
+  { "key": "shift+cmd+/"       , "command": "editor.action.blockComment"     , "when": "editorFocus"                       },
+  { "key": "cmd+["             , "command": "editor.toggleFold"              , "when": "editorTextFocus && foldingEnabled" },
+
+  { "key": "cmd+alt+c"         , "command": "copyFilePath"                   , "when": "editorFocus"                       },
+  { "key": "cmd+k cmd+a"       , "command": "git.stageSelectedRanges"        , "when": "isInDiffEditor"                    },
+  { "key": "alt+shift+r"       , "command": "references-view.findReferences" , "when": "editorHasReferenceProvider"        },
+
+  { "key": "cmd+k"             , "command": "workbench.action.terminal.clear", "when": "terminalFocus"                     },
+  { "key": "ctrl+`"            , "command": "workbench.action.createTerminalEditor"                                        },
+  { "key": "ctrl+\\"           , "command": "workbench.action.splitEditorRight"                                            },
+  { "key": "ctrl+/"            , "command": "workbench.action.splitEditorDown"                                             },
+  { "key": "cmd+0"             , "command": "workbench.action.zoomReset"                                                   }
 ]

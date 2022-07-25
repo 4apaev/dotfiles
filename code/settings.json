@@ -1,262 +1,263 @@
 {
-
-  /* * *             * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-     * * *             * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-      * * *  Files      * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-       * * *  Window     * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-      * * *  Explorer   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-     * * *             * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *             * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * */
-  "window.title": "[ ${dirty} ${folderName} ] ${activeEditorMedium}",
-  "files.autoSave": "afterDelay",
-  "files.trimTrailingWhitespace": true,
-  "window.closeWhenEmpty": true,
-  "explorer.confirmDelete": true,
-
-  /* * *             * * *   * * *   * * *   * * *   * * *   * * *
-    * * *             * * *   * * *   * * *   * * *   * * *   * * *
-     * * *  Terminal   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *             * * *   * * *   * * *   * * *   * * *   * * *
-   * * *             * * *   * * *   * * *   * * *   * * *   * * */
-  "terminal.external.osxExec": "iTerm.app",
-  "breadcrumbs.enabled": true,
-
   /* * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
     * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
      * * *  Editor   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
     * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
    * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * */
-  "editor.tabSize": 2,
-  "editor.lineHeight": 14,
-  "editor.fontSize": 12,
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "Fira Code Retina",
-  "scm.inputFontFamily": "IBM Plex Mono",
-  "editor.inlayHints.fontFamily": "Menlo",
-  "editor.inlineSuggest.enabled": true,
-  "editor.inlayHints.fontSize": 11,
-  "editor.foldingStrategy": "indentation",
+
+  "breadcrumbs.enabled"          : true,
+  "breadcrumbs.showBooleans"     : false,
+
+  "files.trimTrailingWhitespace" : true,
+  "files.autoSave"               : "afterDelay",
+
+  "terminal.external.osxExec"    : "iTerm.app",
+
+  "window.title"                 : "${dirty} ${folderName} ${separator} ${activeEditorShort}",
+  "window.closeWhenEmpty"        : true,
+  "window.commandCenter"         : true,
+  "window.nativeTabs"            : true,
+
+  "explorer.confirmDelete"       : true,
+  "explorer.compactFolders"      : false,
+  "explorer.fileNesting.enabled" : true,
+  "explorer.fileNesting.patterns": {
+    "*.js": "$(capture).*.js, ${capture}.js.map, ${capture}.d.ts, ${capture}.css, ${capture}.styl, ${capture}.sass",
+    "*.ts": "${capture}.*.ts, ${capture}.js",
+    "*.jsx": "${capture}.*.jsx, ${capture}.js",
+    "*.styl": "${capture}.css",
+    "*.sass": "${capture}.css",
+    "*.less": "${capture}.css",
+
+    "*.pem": "${capture}.*.pem, ${capture}*.cert",
+    "*.code-workspace": "tasks.json, launch.json, extensions.json",
+    "*.sublime-project": "*.sublime-workspace, *.sublime-project",
+
+    "docker-compose.yml": ".dockerignore, docker-compose.*, dockerfile*",
+    "package.json": "tsconfig.json, .eslintrc.yml, .mocharc.yml, .c8rc, package-lock.json, readme.md, .gitignore"
+  },
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  "editor.accessibilitySupport"                          : "off",
+  "editor.cursorStyle"                                   : "line",
+
   "editor.foldingHighlight": false,
-  "editor.unfoldOnClickAfterEndOfLine": true,
-  "editor.showFoldingControls": "always",
-  "editor.matchBrackets": "near",
-  "editor.guides.bracketPairs": true,
-  "editor.guides.highlightActiveBracketPair": false,
-  "editor.cursorStyle": "line",
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "all",
-  "editor.renderLineHighlight": "gutter",
-  "editor.suggestSelection": "first",
-  "editor.accessibilitySupport": "off",
-  "editor.gotoLocation.multipleReferences": "gotoAndPeek",
-  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
-  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
-  "editor.gotoLocation.multipleTypeDefinitions": "gotoAndPeek",
-  "editor.gotoLocation.multipleImplementations": "gotoAndPeek",
-  "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToReferences",
-  "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.revealDefinition",
-  "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.referenceSearch.trigger",
-  "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToImplementation",
-  "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToTypeDefinition",
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
+
+  "editor.fontSize"                                      : 12,
+  "editor.inlayHints.fontSize"                           : 11,
+
+  "scm.inputFontFamily"                                  : "PT Mono",
+  "editor.fontFamily"                                    : "IBM Plex Mono",
+  "editor.inlayHints.fontFamily"                         : "Fira Code Retina",
+  "editor.codeLensFontFamily"                            : "IBM Plex Mono",
+  "editor.fontLigatures"                                 : true,
+  "editor.formatOnPaste"                                 : true,
+  "editor.formatOnSave"                                  : true,
+
+  // "editor.gotoLocation.alternativeDeclarationCommand"    : "editor.action.referenceSearch.trigger",
+  // "editor.gotoLocation.alternativeDefinitionCommand"     : "editor.action.revealDefinition",
+  // "editor.gotoLocation.alternativeImplementationCommand" : "editor.action.goToImplementation",
+  // "editor.gotoLocation.alternativeReferenceCommand"      : "editor.action.goToReferences",
+  // "editor.gotoLocation.alternativeTypeDefinitionCommand" : "editor.action.goToTypeDefinition",
+  // "editor.gotoLocation.multipleDeclarations"             : "gotoAndPeek",
+  // "editor.gotoLocation.multipleDefinitions"              : "gotoAndPeek",
+  // "editor.gotoLocation.multipleImplementations"          : "gotoAndPeek",
+  // "editor.gotoLocation.multipleReferences"               : "gotoAndPeek",
+  // "editor.gotoLocation.multipleTypeDefinitions"          : "gotoAndPeek",
+
+  "editor.guides.bracketPairs"                           : true,
+  "editor.guides.highlightActiveBracketPair"             : false,
+  "editor.inlineSuggest.enabled"                         : true,
+  "editor.lineHeight"                                    : 14,
+  "editor.matchBrackets"                                 : "near",
+  "editor.multiCursorModifier"                           : "ctrlCmd",
+  "editor.renderLineHighlight"                           : "gutter",
+  "editor.renderWhitespace"                              : "all",
+  "editor.showFoldingControls"                           : "always",
+  "editor.suggestSelection"                              : "first",
+  "editor.tabSize"                                       : 2,
+  "editor.unfoldOnClickAfterEndOfLine"                   : true,
+  "editor.minimap.enabled"                               : false,
+  "editor.unicodeHighlight.allowedCharacters": { "❯": true, "❮": true },
+
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false,
-    "source.addMissingImports": true,
+    "source.fixAll.eslint"     : true,
+    "source.organizeImports"   : false,
+    "source.addMissingImports" : true
   },
 
-  /* * *              * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *              * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-     * * *  WorkBench   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *              * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-   * * *              * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * */
-  "workbench.tree.indent": 16,
-  "workbench.iconTheme": null,
-  "workbench.startupEditor": "none",
-  "workbench.fontAliasing": "antialiased",
-  "workbench.colorTheme": "Oceanic Next (Sublime)",
-  "workbench.editor.pinnedTabSizing": "shrink",
-  "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.localHistory.mergeWindow": 20,
-  "workbench.localHistory.maxFileEntries": 75,
-  "workbench.localHistory.maxFileSize": 512,
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  /* * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-     * * *  Theme    * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-   * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * */
+  "workbench.colorTheme"                   : "Oceanic Next (Sublime)",
+  "workbench.fontAliasing"                 : "antialiased",
+  "workbench.startupEditor"                : "none",
+  "workbench.editor.pinnedTabSizing"       : "shrink",
+  "workbench.editor.closeOnFileDelete"     : true,
+  "workbench.editor.highlightModifiedTabs" : true,
+
+  "workbench.localHistory.maxFileEntries"  : 75,
+  "workbench.localHistory.maxFileSize"     : 512,
+  "workbench.localHistory.mergeWindow"     : 20,
+
+  "workbench.tree.indent"                  : 16,
+  "workbench.view.alwaysShowHeaderActions" : true,
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "workbench.colorCustomizations": {
-    "gitDecoration.untrackedResourceForeground": "#99c7947c",
-    "gitDecoration.addedResourceForeground": "#99C794",
-    "gitDecoration.modifiedResourceForeground": "#6BD8FF",
-    "gitDecoration.deletedResourceForeground": "#E55555",
-    "gitDecoration.ignoredResourceForeground": "#65737ea4",
-    "editor.background": "#303841",
-    "editor.foreground": "#d5dbe6",
-    // "editorCursor.background"      : "#ff0000",
-    "editorCursor.foreground": "#40c463",
-    "editor.selectionBackground": "#40ad5d31",
-    "editorBracketMatch.border": "#30384100",
-    "editorBracketMatch.background": "#1f1d21",
-    // "editorBracketHighlight.foreground1"   : "#FFCC33",
-    // "editorBracketHighlight.foreground2"   : "#33ffa0",
-    // "editorBracketHighlight.foreground3"   : "#33ffff",
-    // "editorBracketHighlight.foreground4"   : "#c878c8",
-    // "editorBracketHighlight.foreground5"   : "#f44073",
-    // "editorBracketHighlight.foreground6"   : "#fa1c5b",
-    "sideBar.background": "#1d2227",
-    "sideBar.border": "#303841",
-    "panel.background": "#1d2227",
-    "activityBar.background": "#1d2227",
-    "activityBar.border": "#303841",
-    "statusBar.background": "#282b3c",
-    "statusBar.foreground": "#eeffff",
-    "titleBar.activeBackground": "#282b3c",
-    "titleBar.activeForeground": "#eeefff"
+    "gitDecoration.untrackedResourceForeground" : "#99c7947c",
+    "gitDecoration.addedResourceForeground"     : "#99C794",
+    "gitDecoration.modifiedResourceForeground"  : "#6BD8FF",
+    "gitDecoration.deletedResourceForeground"   : "#E55555",
+    "gitDecoration.ignoredResourceForeground"   : "#65737ea4",
+    "editor.background"                         : "#303841",
+    "editor.foreground"                         : "#d5dbe6",
+    "editorCursor.foreground"                   : "#40c463",
+    "editor.selectionBackground"                : "#40ad5d31",
+    "editorBracketMatch.border"                 : "#30384100",
+    "editorBracketMatch.background"             : "#1f1d21",
+    "sideBar.background"                        : "#1d2227",
+    "sideBar.border"                            : "#303841",
+    "panel.background"                          : "#1d2227",
+    "activityBar.background"                    : "#1d2227",
+    "activityBar.border"                        : "#303841",
+    "statusBar.background"                      : "#282b3c",
+    "statusBar.foreground"                      : "#eeffff",
+    "titleBar.activeBackground"                 : "#282b3c",
+    "titleBar.activeForeground"                 : "#eeefff"
+    // "editorCursor.background"                : "#ff0000",
+    // "editorBracketHighlight.foreground1"     : "#FFCC33",
+    // "editorBracketHighlight.foreground2"     : "#33ffa0",
+    // "editorBracketHighlight.foreground3"     : "#33ffff",
+    // "editorBracketHighlight.foreground4"     : "#c878c8",
+    // "editorBracketHighlight.foreground5"     : "#f44073",
+    // "editorBracketHighlight.foreground6"     : "#fa1c5b",
   },
 
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
   /* * *            * * *   * * *   * * *   * * *
     * * *            * * *   * * *   * * *   * * *
      * * *  Search    * * *   * * *   * * *   * * *
     * * *            * * *   * * *   * * *   * * *
    * * *            * * *   * * *   * * *   * * */
-  "search.maxResults": 20,
-  "search.showLineNumbers": true,
-  "search.useGlobalIgnoreFiles": true,
-  "search.collapseResults": "alwaysCollapse",
+
+  "search.maxResults"           : 20,
+  "search.showLineNumbers"      : true,
+  "search.useGlobalIgnoreFiles" : true,
+  "search.collapseResults"      : "alwaysCollapse",
   "search.exclude": {
-    "dist": true,
-    "build": true,
-    "coverage": true,
-    "node_modules": true,
-    ".c8_temp": true,
-    ".c8temp": true,
-    ".idea": true,
+    "dist"         : true,
+    "build"        : true,
+    "coverage"     : true,
+    "node_modules" : true,
+    ".c8_temp"     : true,
+    ".c8temp"      : true,
+    ".idea"        : true
   },
 
-  /* * *        * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *        * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-     * * *  Ext   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *        * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-   * * *        * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-   */
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "docker.enableDockerComposeLanguageService": true,
 
-  /* * *        * * *   * * *   * * *   * * *
-    * * *        * * *   * * *   * * *   * * *
-     * * *  Git   * * *   * * *   * * *   * * *
-    * * *        * * *   * * *   * * *   * * *
-   * * *        * * *   * * *   * * *   * * */
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  "git.mergeEditor": true,
   "git.countBadge": "tracked",
   "git.untrackedChanges": "separate",
   "merge-conflict.autoNavigateNextConflict.enabled": true,
+
+  "diffEditor.codeLens": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  /* * *   Git Gutter    * * *   * * */
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
   "scm.diffDecorationsGutterWidth": 4,
   "scm.diffDecorationsGutterVisibility": "hover",
   "scm.diffDecorationsGutterPattern": {
     "added": true
   },
 
-  /* * *           * * *   * * *   * * *   * * *
-    * * *  Intelli  * * *   * * *   * * *   * * *
-     * * *  Sense    * * *   * * *   * * *   * * *
-    * * *  Code     * * *   * * *   * * *   * * *
-   * * *           * * *   * * *   * * *   * * */
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "path-intellisense.extensionOnImport": true,
   "vsintellicode.sql.completionsEnabled": true,
+  "vsintellicode.features.apiExamplests": "enabled",
   "vsintellicode.features.python.deepLearning": "enabled",
 
-  /* * *           * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *
-     * * *  ESlint   * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *
-   * * *           * * *   * * *   * * *   * * */
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "eslint.run": "onSave",
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,
   "eslint.alwaysShowStatus": true,
   "problems.showCurrentInStatus": true,
 
-  /* * *          * * *   * * *   * * *   * * *
-    * * *          * * *   * * *   * * *   * * *
-     * * *  Js/Ts   * * *   * * *   * * *   * * *
-    * * *          * * *   * * *   * * *   * * *
-   * * *          * * *   * * *   * * *   * * */
-  "js/ts.implicitProjectConfig.target": "ESNext",
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  "js/ts.implicitProjectConfig.target": "ES2022",
+  "js/ts.implicitProjectConfig.module": "ES2022",
+
   "js/ts.implicitProjectConfig.strictFunctionTypes": false,
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
+
   "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
+
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
+
   "typescript.referencesCodeLens.enabled": false,
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
 
-  /* * *           * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *
-     * * *  Format   * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *
-   * * *           * * *   * * *   * * *   * * */
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.referencesCodeLens.enabled": false,
+
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
 
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
 
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
+  // "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
+  // "[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features" },
+
+  "[typescript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
 
   "typescript.format.semicolons": "remove",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+
   "javascript.format.semicolons": "remove",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+
+
   "yaml.format.singleQuote": true,
+
   "html.format.indentInnerHtml": true,
   "html.format.maxPreserveNewLines": 1,
+
   "css.format.spaceAroundSelectorSeparator": true,
   "scss.format.spaceAroundSelectorSeparator": true,
 
-  /* * *   * *   * * *   * * *   * * *   * * *
-    * * *         * * *   * * *   * * *   * * *
-     * * *  Mix    * * *   * * *   * * *   * * *
-    * * *         * * *   * * *   * * *   * * *
-   * * * * * * * * * *   * * *   * * *   * * */
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "testing.automaticallyOpenPeekView": "failureAnywhere",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.keybindingsPerPlatform": false,
 
-  /* * *             * * *   * * *   * * *   * * *
-    * * *             * * *   * * *   * * *   * * *
-     * * *  Telemetry  * * *   * * *   * * *   * * *
-    * * *             * * *   * * *   * * *   * * *
-   * * *             * * *   * * *   * * *   * * */
+
   "redhat.telemetry.enabled": false,
-  "telemetry.telemetryLevel": "off",
-  "editor.minimap.enabled": false,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.unicodeHighlight.allowedCharacters": {
-    "❯": true,
-    "❮": true
-  },
+  "telemetry.telemetryLevel": "off"
 }
 
-/*
-  "explorer.fileNesting.enabled": false,
-  "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js",
-    "*.jsx": "${capture}.js",
-    "*.tsx": "${capture}.ts",
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "docker*": "dockerfile.*, docker-compose.yml, .dockerignore",
-    "package.json": "package-lock.json, jsconfig.json, tsconfig.json, yarn.lock, readme.md",
-    ".*rc": ".env, .eslintrc.yml, .gitignore, .c8rc, .mocharc.yml"
-  },
-*/
+
+
