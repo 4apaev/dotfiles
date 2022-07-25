@@ -1,0 +1,5 @@
+/*
+ * WWW.HAARETZ.CO.IL
+ */
+[data-google-interstitial] { display: none !important }
+/* [data-test="topStrip"][data-google-interstitial], [data-test="bottomStrip"][data-google-interstitial] { display: none !important } */
