@@ -10,6 +10,7 @@
 
   l=log --pretty=oneline -n 60 --graph --abbrev-commit
   ll=log --pretty=oneline --graph --decorate --all
+  sun=status -uno
   st=status
   s=status -s
   ci=commit

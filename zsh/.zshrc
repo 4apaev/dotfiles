@@ -1,14 +1,13 @@
-ZSH_THEME="shoshi"
-
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
+ZSH_THEME=shoshi
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR=subl
-export PATH="/usr/local/sbin:$PATH"
+export PATH=/usr/local/sbin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 plugins=(git docker)
 
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS=true
 HIST_STAMPS="dd.mm.yyyy"
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NODUPS
@@ -88,7 +87,6 @@ function bup() {
   npm update -g
 }
 
-
 function dckill() {
   doc down
   doc stop $(doc ps -a -q)
@@ -96,7 +94,6 @@ function dckill() {
   doc rm $(doc ps -a -q)
   doc rmi $(doc images -q)
 }
-
 
 function help() {
   man -t $@ | open -f -a Preview
@@ -136,5 +133,3 @@ function static() {
   done
   python -m http.server $port --directory $dir
 }
-
-
