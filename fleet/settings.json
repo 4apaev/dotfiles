@@ -1,0 +1,30 @@
+{
+  "theme": "dark_purple",
+  "keymap": "macos",
+  "showShortcuts": true,
+  "files.selectOpenedFile": true,
+  "files.toggleFolderMode": "singleClick",
+
+
+  "editor.guides": [ 80, 96, 128 ],
+  "editor.renderWhitespace": "All",
+  "editor.alwaysShowHorizontalScrollbar": false,
+  "editor.alwaysShowVerticalScrollbar": false,
+  "editor.showAutoImportWidget": true,
+  "editor.honorCamelHumps": true,
+  "editor.showCodeVision": true,
+  "editor.tabSize": 2,
+  "editor.fontSize": 12.0,
+  "editor.lineSpacing": 1.2,
+  "editor.fontFamily": "IBM Plex Mono",
+  "terminal.fontFamily": "PT Mono",
+  "terminal.lineSpacing": 1.4,
+  "terminal.fontSize": 12.0,
+  "terminal.clearTerminalOnCmdK": true,
+  "terminal.enableFocusEditorOnEsc": true,
+  "launchTerminalOnOpen": true,
+
+  "fus.sendAllowed": false, // usage stats
+  "editor.showTabs": true,
+  "editor.softWrapEnabled": true
+}

@@ -1,0 +1,40 @@
+{
+  "keymap": [
+    {
+      "key": "ctrl-alt-down",
+      "trigger": "-add-caret-down"
+    },
+    {
+      "key": "shift-ctrl-down",
+      "trigger": "add-caret-down"
+    },
+    {
+      "key": "ctrl-alt-up",
+      "trigger": "-add-caret-up"
+    },
+    {
+      "key": "shift-ctrl-up",
+      "trigger": "add-caret-up"
+    },
+    {
+      "key": "alt-shift-d",
+      "trigger": "-duplicate-line"
+    },
+    {
+      "key": "shift-cmd-d",
+      "trigger": "duplicate-line"
+    },
+    {
+      "key": "cmd-l",
+      "trigger": "-clear-terminal"
+    },
+    {
+      "key": "cmd-k",
+      "trigger": "clear-terminal"
+    },
+    {
+      "key": "shift-cmd-s",
+      "trigger": "save-file-as"
+    }
+  ]
+}
