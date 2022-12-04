@@ -1,95 +1,98 @@
 {
-  /* * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-     * * *  Editor   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-    * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *
-   * * *           * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * *   * * */
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "breadcrumbs.enabled"          : true,
-  "breadcrumbs.showBooleans"     : false,
+  "breadcrumbs.enabled"      : true,
+  "breadcrumbs.showBooleans" : false,
 
-  "files.trimTrailingWhitespace" : true,
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "files.autoSave"               : "afterDelay",
+  "files.enableTrash"            : true,
+  "files.trimTrailingWhitespace" : true,
 
-  "terminal.external.osxExec"    : "iTerm.app",
+  "terminal.external.osxExec"              : "iTerm.app",
+  "terminal.integrated.defaultProfile.osx" : "zsh",
 
-  "window.title"                 : "${dirty} ${folderName} ${separator} ${activeEditorShort}",
-  "window.closeWhenEmpty"        : true,
-  "window.commandCenter"         : true,
-  "window.nativeTabs"            : true,
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "explorer.confirmDelete"       : true,
-  "explorer.compactFolders"      : false,
-  "explorer.fileNesting.enabled" : true,
-  "explorer.fileNesting.patterns": {
-    "*.js": "$(capture).*.js, ${capture}.js.map, ${capture}.d.ts, ${capture}.css, ${capture}.styl, ${capture}.sass",
-    "*.ts": "${capture}.*.ts, ${capture}.js",
-    "*.jsx": "${capture}.*.jsx, ${capture}.js",
-    "*.styl": "${capture}.css",
-    "*.sass": "${capture}.css",
-    "*.less": "${capture}.css",
+  "window.title"          : "${dirty} ${folderName} ${separator} ${activeEditorShort}",
+  "window.closeWhenEmpty" : true,
+  "window.commandCenter"  : true,
+  "window.nativeTabs"     : true,
+  "window.titleBarStyle"  : "native",
 
-    "*.pem": "${capture}.*.pem, ${capture}*.cert",
-    "*.code-workspace": "tasks.json, launch.json, extensions.json",
-    "*.sublime-project": "*.sublime-workspace, *.sublime-project",
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    "docker-compose.yml": ".dockerignore, docker-compose.*, dockerfile*",
-    "package.json": "tsconfig.json, .eslintrc.yml, .mocharc.yml, .c8rc, package-lock.json, readme.md, .gitignore"
+  "explorer.confirmDelete"        : true,
+  "explorer.compactFolders"       : false,
+  "explorer.fileNesting.expand"   : false,
+  "explorer.fileNesting.enabled"  : true,
+  "explorer.fileNesting.patterns" : {
+    ".mocharc.yml"      : ".c8rc",
+    ".gitignore"        : ".git$(capture)*",
+    ".eslintrc.yml"     : ".editorconfig",
+    "docker-compose.yml": "dockerfile*, docker-compose.*, .dockerignore",
+    "package.json"      : "package-lock.json, tsconfig.json, jsconfig.json, readme.md",
+    "*.code-workspace"  : "tasks.json, launch.json, extensions.json",
   },
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "editor.accessibilitySupport"                          : "off",
-  "editor.cursorStyle"                                   : "line",
+  // "editor.inlineSuggest.enabled"            : true,
 
-  "editor.foldingHighlight": false,
+  "editor.cursorStyle"                      : "line",
+  "editor.multiCursorModifier"              : "ctrlCmd",
 
-  "editor.fontSize"                                      : 12,
-  "editor.inlayHints.fontSize"                           : 11,
+  "editor.tabSize"                          : 2,
+  "editor.lineHeight"                       : 14,
+  "editor.fontSize"                         : 12,
+  "editor.inlayHints.fontSize"              : 11,
 
-  "scm.inputFontFamily"                                  : "PT Mono",
-  "editor.fontFamily"                                    : "IBM Plex Mono",
-  "editor.inlayHints.fontFamily"                         : "Fira Code Retina",
-  "editor.codeLensFontFamily"                            : "IBM Plex Mono",
-  "editor.fontLigatures"                                 : true,
-  "editor.formatOnPaste"                                 : true,
-  "editor.formatOnSave"                                  : true,
+  "editor.fontLigatures"                    : true,
+  "editor.inlayHints.fontFamily"            : "IBM Plex Mono ExtraLight",
+  "editor.codeLensFontFamily"               : "IBM Plex Mono Light",
+  "editor.fontFamily"                       : "IBM Plex Mono",
 
-  // "editor.gotoLocation.alternativeDeclarationCommand"    : "editor.action.referenceSearch.trigger",
-  // "editor.gotoLocation.alternativeDefinitionCommand"     : "editor.action.revealDefinition",
-  // "editor.gotoLocation.alternativeImplementationCommand" : "editor.action.goToImplementation",
-  // "editor.gotoLocation.alternativeReferenceCommand"      : "editor.action.goToReferences",
-  // "editor.gotoLocation.alternativeTypeDefinitionCommand" : "editor.action.goToTypeDefinition",
-  // "editor.gotoLocation.multipleDeclarations"             : "gotoAndPeek",
-  // "editor.gotoLocation.multipleDefinitions"              : "gotoAndPeek",
-  // "editor.gotoLocation.multipleImplementations"          : "gotoAndPeek",
-  // "editor.gotoLocation.multipleReferences"               : "gotoAndPeek",
-  // "editor.gotoLocation.multipleTypeDefinitions"          : "gotoAndPeek",
 
-  "editor.guides.bracketPairs"                           : true,
-  "editor.guides.highlightActiveBracketPair"             : false,
-  "editor.inlineSuggest.enabled"                         : true,
-  "editor.lineHeight"                                    : 14,
-  "editor.matchBrackets"                                 : "near",
-  "editor.multiCursorModifier"                           : "ctrlCmd",
-  "editor.renderLineHighlight"                           : "gutter",
-  "editor.renderWhitespace"                              : "all",
-  "editor.showFoldingControls"                           : "always",
-  "editor.suggestSelection"                              : "first",
-  "editor.tabSize"                                       : 2,
-  "editor.unfoldOnClickAfterEndOfLine"                   : true,
-  "editor.minimap.enabled"                               : false,
-  "editor.unicodeHighlight.allowedCharacters": { "❯": true, "❮": true },
+  "editor.find.globalFindClipboard"         : true,
+
+  "editor.formatOnPaste"                    : true,
+  "editor.formatOnSave"                     : true,
+
+  "editor.unfoldOnClickAfterEndOfLine"      : true,
+  "editor.foldingHighlight"                 : false,
+  "editor.renderLineHighlight"              : "gutter",
+
+  "editor.guides.bracketPairs"              : true,
+  "editor.guides.highlightActiveBracketPair": false,
+  "editor.matchBrackets"                    : "near",
+
+
+  "editor.renderWhitespace"                 : "all",
+  "editor.suggestSelection"                 : "first",
+  "editor.wordSeparators"                   : "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "scm.inputFontFamily"                     : "IBM Plex Mono ExtraLight",
 
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint"     : true,
     "source.organizeImports"   : false,
-    "source.addMissingImports" : true
+    "source.addMissingImports" : true,
   },
+
+
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "workbench.colorTheme"                   : "Oceanic Next (Sublime)",
+  // "editor.unicodeHighlight.allowedCharacters"   : { "❯": true, "❮": true, },
+  // "editor.unicodeHighlight.allowedLocales"      : { "_os": true, "_vscode": true },
+  // "editor.unicodeHighlight.includeComments"     : false,
+  // "editor.unicodeHighlight.includeStrings"      : false,
+  // "editor.unicodeHighlight.ambiguousCharacters" : false,
+  // "editor.unicodeHighlight.invisibleCharacters" : false,
+  // "editor.unicodeHighlight.nonBasicASCII"       : false,
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "workbench.fontAliasing"                 : "antialiased",
   "workbench.startupEditor"                : "none",
   "workbench.editor.pinnedTabSizing"       : "shrink",
@@ -101,10 +104,9 @@
   "workbench.localHistory.mergeWindow"     : 20,
 
   "workbench.tree.indent"                  : 16,
-  "workbench.view.alwaysShowHeaderActions" : true,
+  "workbench.view.alwaysShowHeaderActions": true,
 
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  "workbench.colorTheme"                   : "Oceanic Next (Sublime)",
   "workbench.colorCustomizations": {
     "gitDecoration.untrackedResourceForeground" : "#99c7947c",
     "gitDecoration.addedResourceForeground"     : "#99C794",
@@ -126,26 +128,13 @@
     "statusBar.foreground"                      : "#eeffff",
     "titleBar.activeBackground"                 : "#282b3c",
     "titleBar.activeForeground"                 : "#eeefff"
-    // "editorCursor.background"                : "#ff0000",
-    // "editorBracketHighlight.foreground1"     : "#FFCC33",
-    // "editorBracketHighlight.foreground2"     : "#33ffa0",
-    // "editorBracketHighlight.foreground3"     : "#33ffff",
-    // "editorBracketHighlight.foreground4"     : "#c878c8",
-    // "editorBracketHighlight.foreground5"     : "#f44073",
-    // "editorBracketHighlight.foreground6"     : "#fa1c5b",
   },
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
-  /* * *            * * *   * * *   * * *   * * *
-    * * *            * * *   * * *   * * *   * * *
-     * * *  Search    * * *   * * *   * * *   * * *
-    * * *            * * *   * * *   * * *   * * *
-   * * *            * * *   * * *   * * *   * * */
-
   "search.maxResults"           : 20,
   "search.showLineNumbers"      : true,
   "search.useGlobalIgnoreFiles" : true,
-  "search.collapseResults"      : "alwaysCollapse",
+  "search.collapseResults"      : "alwaysExpand",
   "search.exclude": {
     "dist"         : true,
     "build"        : true,
@@ -153,35 +142,40 @@
     "node_modules" : true,
     ".c8_temp"     : true,
     ".c8temp"      : true,
-    ".idea"        : true
+    ".idea"        : true,
   },
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "docker.enableDockerComposeLanguageService": true,
+  // "aws.telemetry": false,
+  // "aws.samcli.enableCodeLenses": true,
+  // "aws.suppressPrompts": { "fileViewerEdit": true },
+  // "aws.ecs.openTerminalCommand": "/bin/zsh",
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  "git.autofetch": true,
   "git.mergeEditor": true,
   "git.countBadge": "tracked",
-  "git.untrackedChanges": "separate",
-  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "github.gitProtocol": "ssh",
+  "git.untrackedChanges": "hidden",
 
-  "diffEditor.codeLens": true,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "merge-conflict.decorators.enabled": true,
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
+
   "scm.diffDecorationsGutterWidth": 4,
-  "scm.diffDecorationsGutterVisibility": "hover",
+  "scm.diffDecorationsGutterVisibility": "always",
   "scm.diffDecorationsGutterPattern": {
-    "added": true
+    "added": true,
+    "modified": true,
   },
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
   "path-intellisense.extensionOnImport": true,
   "vsintellicode.sql.completionsEnabled": true,
-  "vsintellicode.features.apiExamplests": "enabled",
   "vsintellicode.features.python.deepLearning": "enabled",
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -194,51 +188,11 @@
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "js/ts.implicitProjectConfig.target": "ES2022",
-  "js/ts.implicitProjectConfig.module": "ES2022",
-
-  "js/ts.implicitProjectConfig.strictFunctionTypes": false,
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
-
-  "javascript.preferences.importModuleSpecifierEnding": "js",
-  "typescript.preferences.importModuleSpecifierEnding": "js",
-
-  "javascript.preferences.quoteStyle": "single",
-  "typescript.preferences.quoteStyle": "single",
-
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-
-  "typescript.referencesCodeLens.enabled": false,
-  "typescript.implementationsCodeLens.enabled": false,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.referencesCodeLens.enabled": false,
-
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////////
-
+  "docker.enableDockerComposeLanguageService": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
 
 
-  // "[json]": { "editor.defaultFormatter": "vscode.json-language-features" },
-  // "[jsonc]": { "editor.defaultFormatter": "vscode.json-language-features" },
-
-  "[typescript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
-
-  "typescript.format.semicolons": "remove",
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
-
-  "javascript.format.semicolons": "remove",
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
-
-
-  "yaml.format.singleQuote": true,
+  //////////////////////////////////////////////////////////////////////////////////////////////////////
 
   "html.format.indentInnerHtml": true,
   "html.format.maxPreserveNewLines": 1,
@@ -246,18 +200,87 @@
   "css.format.spaceAroundSelectorSeparator": true,
   "scss.format.spaceAroundSelectorSeparator": true,
 
+  "yaml.format.enable": false,
+  "yaml.format.singleQuote": true,
+  "yaml.format.bracketSpacing": true,
+  "yaml.completion": true,
+  "yaml.hover": true,
+
+  "js/ts.implicitProjectConfig.target": "ES2022",
+  "js/ts.implicitProjectConfig.module": "ES2022",
+
+  "js/ts.implicitProjectConfig.strictFunctionTypes": false,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "javascript.referencesCodeLens.enabled": false,
+
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "javascript.format.semicolons": "remove",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+
+
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.referencesCodeLens.enabled": false,
+
+  "typescript.format.semicolons": "remove",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+
+  "[css]"        : { "editor.defaultFormatter": "vscode.css-language-features"        , "editor.formatOnSave": false },
+  "[json]"       : { "editor.defaultFormatter": "vscode.json-language-features"       , "editor.formatOnSave": false },
+  "[python]"     : { "editor.defaultFormatter": "vscode.ipynb"                        , "editor.formatOnSave": false },
+  "[typescript]" : { "editor.defaultFormatter": "vscode.typescript-language-features" , "editor.formatOnSave": false },
+  "[html]"       : { "editor.defaultFormatter": "vscode.html-language-features"       , "editor.formatOnSave": false },
+  "[yaml]"       : { "editor.defaultFormatter": "redhat.vscode-yaml"                  , "editor.formatOnSave": false },
+  "[go]"         : { "editor.defaultFormatter": "golang.go"                           , "editor.formatOnSave": false },
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-  "testing.automaticallyOpenPeekView": "failureAnywhere",
-  "security.workspace.trust.untrustedFiles": "open",
-  "settingsSync.keybindingsPerPlatform": false,
-
-
   "redhat.telemetry.enabled": false,
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "extensions.ignoreRecommendations": true,
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "editor.minimap.enabled": false,
 }
-
 
 

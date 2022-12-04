@@ -1,44 +1,44 @@
 [color]
   ui = true
+
 [user]
   name = michael
-  email = 4apaev@gmail.com
+  email = *****@*****.***
+
+[credential]
+  helper = cache --timeout 3600
+
 [alias]
-  l = log --pretty=oneline -n 10 --graph --abbrev-commit
-  ll = log --pretty=oneline --graph --decorate --all
-  lg = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %d %s\" --all --date=short
-
-  l=log --pretty=oneline -n 60 --graph --abbrev-commit
-  ll=log --pretty=oneline --graph --decorate --all
-  sun=status -uno
-  st=status
-  s=status -s
-  ci=commit
-  cm=commit -m
-  co=checkout
-  br=branch
-
-  st = status
-   s = status -s
-  ci = commit
-  cm = commit -m
-  cl = clone
-  co = checkout
-  br = branch
-  df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-  dc = diff --cached
-  cp = cherry-pick
-  # Remove branches that have already been merged with main (delete merged)
-  del = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+  s   = status -s
+  st  = status
+  sun = status -uno
+  br  = branch
+  ci  = commit
+  cl  = clone
+  cm  = commit -m
+  co  = checkout
+  cp  = cherry-pick
+  dc  = diff --cached
+  df  = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+  del = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d" # Remove branches merged with master
+  lg  = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %d %s\" --all --date=short
+  ll  = log --pretty=oneline --graph --decorate --all
+  l   = log --pretty=oneline --graph --abbrev-commit -n
 
 [help]
   autocorrect = 1
+
 [merge]
   log = true
+
 [push]
   # simple | current | matching
-  default = simple
+  default = current
   followTags = true
+
 [core]
   editor = /usr/local/bin/subl
   excludesfile = ~/.gitignore_global
+
+[credential]
+  helper = osxkeychain

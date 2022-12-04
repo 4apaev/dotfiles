@@ -1,12 +1,8 @@
 env:
   node: true
-  mocha: true
-  es2021: true
-  browser: true
+  es2022: true
 
 globals:
-  isNan: true
-  isFinite: true
   toString: true
   hasOwnProperty: true
 
@@ -17,23 +13,39 @@ parserOptions:
   sourceType: module
   ecmaVersion: 2022
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# ◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤
+
 rules:
+  no-unused-vars:
+    - error
+    - args: after-used
+      caughtErrors: none
+      argsIgnorePattern: ^_
+      varsIgnorePattern: ^_
+
+  no-cond-assign: off
+  class-methods-use-this: off
+
+  semi      : [ error, never ]
+  new-parens: [ error, never ]
+
   no-var: warn
   no-debugger: error
-  no-extra-bind: error
-  no-extra-label: error
-  no-else-return: error
   no-lonely-if: error
+  no-else-return: error
   no-return-await: error
-  no-useless-concat: error
-  no-unreachable-loop: error
-  no-unneeded-ternary: error
-  no-useless-catch: error
+  no-extra-label: error
+  no-extra-bind: error
+
   no-useless-call: error
-  no-useless-computed-key: error
+  no-useless-catch: error
+  no-useless-concat: error
   no-useless-constructor: error
+  no-useless-computed-key: error
   no-unused-private-class-members: error
+  no-unneeded-ternary: error
+  no-unreachable-loop: error
+  no-useless-rename: error
 
   no-empty:
     - error
@@ -43,136 +55,103 @@ rules:
     - error
     - enforceForLogicalOperands: true
 
-  # no-useless-computed-key:
-  #   - error
-  #   - enforceForClassMembers: true
+  # ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
 
-  no-cond-assign: off
+  quote-props:
+    - error
+    - as-needed
+    - keywords: true
 
-  no-unused-vars: off
-    # - error
-    # - args: after-used
-    #   caughtErrors: none
-    #   argsIgnorePattern: ^_
-    #   varsIgnorePattern: ^_
-
-  block-scoped-var: error
+  block-scoped-var  : error
   func-name-matching: error
+
+  # ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
+
+  comma-style      : [ error, last ]
+  comma-dangle     : [ error, always-multiline ]
+  multiline-ternary: [ error, always-multiline ]
+
+  arrow-body-style : [ error, as-needed ]
+  arrow-parens     : [ error, as-needed ]
+
+  eol-last         : [ error, always ]
+  curly            : [ error, multi-or-nest ]
+
+  object-shorthand :
+    - error
+    - always
+    - avoidExplicitReturnArrows: true
+
+
+
   require-atomic-updates:
     - error
     - allowProperties: true
 
-  class-methods-use-this: error
-
-  semi:
-    - error
-    - never
-
-  new-parens:
-    - error
-    - never
-
   one-var:
     - error
-    - initialized: never
-
-  multiline-ternary:
-    - error
-    - always-multiline
-
-  eol-last:
-    - error
-    - always
+    - uninitialized: always
 
   camelcase:
-    - warn
+    - error
     - properties: never
-
-  curly:
-    - error
-    - multi-or-nest
-    - consistent
-
-  brace-style:
-    - error
-    - stroustrup
-    # - 1tbs
-    - allowSingleLine: true
 
   quotes:
     - error
     - single
     - allowTemplateLiterals: true
 
-  object-shorthand: # error
+  brace-style:
     - error
-    - always
-    # - avoidExplicitReturnArrows: false
-
-  prefer-arrow-callback:
-    - error
-    - allowUnboundThis: true
-      allowNamedFunctions: true
-
-  # grouped-accessor-pairs:
-  #   - error
-  #   - getBeforeSet
+    - stroustrup
+    - allowSingleLine: true
 
   getter-return:
     - error
     - allowImplicit: true
+
+  space-infix-ops:
+    - error
+    - int32Hint: true
 
   lines-between-class-members:
     - error
     - always
     - exceptAfterSingleLine: true
 
+  prefer-arrow-callback:
+    - error
+    - allowUnboundThis: true
+      allowNamedFunctions: true
+
+
   sort-imports:
     - error
     - ignoreCase: false
-      ignoreMemberSort: false
+      ignoreMemberSort: true
       ignoreDeclarationSort: true
       allowSeparatedGroups: true
-      memberSyntaxSortOrder:
-        - none
-        - single
-        - all
-        - multiple
+      memberSyntaxSortOrder: [ none, single, all, multiple ]
 
-  arrow-parens:
-    - error
-    - as-needed
+  # ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
 
-  arrow-body-style:
-    - error
-    - as-needed
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-  space-infix-ops:
-    - error
-    - int32Hint: true
+  block-spacing: error
+  space-in-parens: error
+  func-call-spacing: error
+  template-curly-spacing: [ error, always ]
+  computed-property-spacing: [ error, always ]
 
   comma-spacing:
     - error
     - after: true
       before: false
 
-  block-spacing: error
-  space-in-parens: error
-  func-call-spacing: error
   space-before-function-paren:
     - error
     - named: never
       anonymous: always
       asyncArrow: always
-
-  template-curly-spacing:
-    - error
-    - always
-
-  computed-property-spacing:
-    - error
-    - always
 
   object-curly-spacing:
     - error
@@ -183,18 +162,19 @@ rules:
   array-bracket-spacing:
     - error
     - always
-    - arraysInArrays: false
+    - singleValue: true
+      arraysInArrays: false
       objectsInArrays: false
 
   key-spacing:
     - error
-    - beforeColon: false
-      afterColon: true
+    - afterColon: true
+      beforeColon: false
 
   keyword-spacing:
     - error
-    - before: true
-      after: true
+    - after: true
+      before: true
       overrides:
         return:
           after: true
@@ -208,18 +188,13 @@ rules:
     - always
     - exceptions: [ '-', '+', '=', '#', '/', '*' ]
 
-  multiline-comment-style:
-    - off
-    - starred-block
+  # ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
   no-multiple-empty-lines:
     - error
-    - max: 1
-
-  max-depth:
-    - off
-    - 4
+    - max: 2
+      maxEOF: 0
+      maxBOF: 0
 
   max-len:
     - error
@@ -227,38 +202,30 @@ rules:
     - 2
     - ignoreUrls: true
       ignoreStrings: true
+      ignoreComments: false
       ignoreRegExpLiterals: true
       ignoreTemplateLiterals: true
-      ignoreComments: false
 
   max-lines:
-    - off
-    - max: 300
-      # skipComments: false
-      # skipBlankLines: false
+    - error
+    - max: 256
 
   max-lines-per-function:
     - off
-    - max: 50
+    - max: 32
       IIFEs: true
       skipComments: true
       skipBlankLines: true
 
+  max-depth: [ off, 4 ]
+  max-params: [ off, 3 ]
+  max-statements: [ off, 10 ]
   max-nested-callbacks: off
-
-  max-params:
-    - off
-    - 3
-
-  max-statements:
-    - 'off'
-    - 10
-
   max-statements-per-line:
-    - 'off'
+    - off
     - max: 1
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+  # ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
 
   indent:
     - error
@@ -266,9 +233,9 @@ rules:
     - SwitchCase: 1
       outerIIFEBody: 1
       ArrayExpression: 1
+      MemberExpression: 2
       ObjectExpression: 1
       ImportDeclaration: 1
-      MemberExpression: 2
       VariableDeclarator:
         const: 2
         var: 2
@@ -289,28 +256,3 @@ rules:
         parameters: 2
         body: 1
 
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-  comma-dangle:
-    - error
-    - arrays: always-multiline
-      objects: always-multiline
-      imports: always-multiline
-      exports: always-multiline
-      functions: always-multiline
-
-  comma-style:
-    - error
-    - last
-    - exceptions:
-        ArrayPattern: false
-        ArrayExpression: false
-        ArrowFunctionExpression: false
-        FunctionDeclaration: false
-        FunctionExpression: false
-        ObjectPattern: false
-        ObjectExpression: false
-        VariableDeclaration: false
-        ImportDeclaration: false
-        CallExpression: false
-        NewExpression: false

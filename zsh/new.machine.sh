@@ -1,3 +1,21 @@
+defaults write write com.bohemiancoding.sketch3 NSNavLastRootDirectory ~/Work/sketches/svg/
+defaults write write com.bohemiancoding.sketch3 NSNavLastRootDirectory ~/Work/sketches/svg
+defaults write write com.bohemiancoding.sketch3 NSNavLastRootDirectory "~/Work/sketches/svg"
+defaults write com.apple.addressbook ABShowDebugMenu -bool YES
+defaults write com.apple.finder QLEnableXRayFolders -boolean TRUE; killall Finder
+defaults write com.apple.DisableXRayForFoldersWithCustomIcons -boolean NO
+defaults write com.apple.finder QLEnableXRayFolders -boolean TRUE; killall Finder
+defaults write com.apple.finder FXListViewStripes -boolean TRUE; killall Finder
+defaults write com.apple.finder FXListViewStripes -boolean FALSE; killall Finder
+defaults write com.apple.finder FXListViewStripes -boolean TRUE; killall Finder
+defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write org.m0k.transmission WarningDonate -bool false
+defaults write org.m0k.transmission WarningLegal -bool false
+defaults write org.m0k.transmission DownloadAsk -bool false
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+
 echo "........................ Install Homebrew ........................"
 echo
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -85,6 +103,16 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10               # KeyRepeat
 # NSGlobalDomain KeyRepeat               : 1
 # NSGlobalDomain InitialKeyRepeat        : 10
 # NSGlobalDomain ApplePressAndHoldEnabled: 0
+
+defaults write com.apple.addressbook ABShowDebugMenu -bool YES
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.DisableXRayForFoldersWithCustomIcons -boolean NO
+defaults write com.apple.finder FXListViewStripes -boolean TRUE; killall Finder
+defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+defaults write org.m0k.transmission DownloadAsk -bool false
+defaults write org.m0k.transmission WarningDonate -bool false
+defaults write org.m0k.transmission WarningLegal -bool false
 
 echo "........................ Set google software update interval to: 2 days ........................"
 echo
