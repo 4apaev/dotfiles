@@ -75,7 +75,7 @@ rules:
   arrow-parens     : [ error, as-needed ]
 
   eol-last         : [ error, always ]
-  curly            : [ error, multi-or-nest ]
+  curly            : [ error, multi-or-nest, consistent ]
 
   object-shorthand :
     - error
